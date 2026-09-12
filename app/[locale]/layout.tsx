@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { locales } from '../../i18n/config';
+import React from 'react';
 import '../globals.css';
 
 // 1️⃣  FUNCTION: pa async → Next.js espere yon array senkron
