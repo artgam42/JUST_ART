@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "portfolio": "Portfolio",
+    "training": "Formation & Mentorship",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "L'art parle là où les mots ne suffisent plus.",
+    "subtitle": "JUST ART rassemble des experts en design, vidéo, digital et stratégie pour donner à votre marque une identité forte et cohérente.",
+    "cta": "Découvrir nos services"
+  },
+  "footer": {
+    "tagline": "L'art parle là où les mots ne suffisent plus.",
+    "copyright": "© 2025 JUST ART. Tous droits réservés."
+  }
+}

@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JUST ART — Pwojè Next.js (scaffold 3.3)
 
-## Getting Started
+## Estrikti pwojè a
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+just-art-website/
+├── app/
+│   ├── globals.css          → Tailwind + police yo (Creato Display, Waiting for the Bridge)
+│   └── [locale]/
+│       ├── layout.tsx       → layout ki chaje selon lang lan (fr / en / pt-br)
+│       └── page.tsx         → paj Akèy placeholder
+├── i18n/
+│   ├── config.ts            → lis lang yo + lang pa defo (fr)
+│   └── dictionaries/
+│       ├── fr.json
+│       ├── en.json
+│       └── pt-br.json
+├── public/
+│   └── fonts/                → METE dosye .woff2 police yo la (gade anba)
+├── middleware.ts             → detekte lang navigatè a, redirije /fr, /en, oswa /pt-br
+├── tailwind.config.ts        → koulè (navy #000028, accent #0000ff) + border-radius: 0
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Etap pou lanse l lokalman
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. `npm install`
+2. `npm run dev`
+3. Louvri `http://localhost:3000` — li dwe redirije otomatikman sou `/fr`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Enpòtan — Fonts
 
-## Learn More
+Mete dosye police ou yo (konvèti an `.woff2` pou pi bon pèfòmans web) nan `public/fonts/`:
+- `CreatoDisplay-Regular.woff2`
+- `CreatoDisplay-Medium.woff2`
+- `WaitingForTheBridge.woff2`
 
-To learn more about Next.js, take a look at the following resources:
+`app/globals.css` deja konfigire pou li chaje yo otomatikman.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Pwochèn etap (Phase 3 nan feuille de route a)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **3.4** — Routing dinamik pou Brand Detail (`/[locale]/portfolio/branding/[slug]`)
+- **3.5** — Fini entegrasyon koulè/police (deja kòmanse isit la)
+- **3.6+** — Bati chak paj (Akèy konplè, Pòtfolyo, Fòmasyon, Apwopo, Kontak) ak tout kontni ki nan dokiman FR/EN/PT-BR yo
 
-## Deploy on Vercel
+## Nòt sou "san radius"
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`tailwind.config.ts` ranplase eskal `borderRadius` Tailwind la pou tout valè yo egal `0px` (sof `full`, rezève pou bagay tankou pwen estati si nesesè pita). Sa vle di `rounded`, `rounded-lg`, `rounded-xl` elatriye ap toujou bay kwen kare san w pa bezwen sonje mete `rounded-none` chak fwa.

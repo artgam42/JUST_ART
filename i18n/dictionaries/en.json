@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "training": "Training & Mentorship",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Art speaks where words no longer suffice.",
+    "subtitle": "JUST ART brings together experts in design, video, digital, and strategy to give your brand a strong, cohesive identity.",
+    "cta": "Discover our services"
+  },
+  "footer": {
+    "tagline": "Art speaks where words no longer suffice.",
+    "copyright": "© 2025 JUST ART. All rights reserved."
+  }
+}
