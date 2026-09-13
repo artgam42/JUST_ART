@@ -7,11 +7,12 @@ import Tag from '../../../components/ui/Tag';
 
 const categories = ['Branding', 'Logo', 'Flyer', 'Banner', 'Autres designs'];
 
-export default function PortfolioPage({
-  params: { locale },
+export default async function PortfolioPage({
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   const localeKey = (['fr', 'en', 'pt-br'].includes(locale) ? locale : 'fr') as Locale;
   const localeBrands = brands[localeKey];
 

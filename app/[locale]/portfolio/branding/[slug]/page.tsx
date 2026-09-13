@@ -12,11 +12,12 @@ export function generateStaticParams() {
   );
 }
 
-export default function BrandDetailPage({
-  params: { locale, slug },
+export default async function BrandDetailPage({
+  params,
 }: {
-  params: { locale: string; slug: string };
+  params: Promise<{ locale: string; slug: string }>;
 }) {
+  const { locale, slug } = await params;
   const localeKey = (locales as readonly string[]).includes(locale)
     ? (locale as Locale)
     : 'fr';

@@ -7,11 +7,12 @@ import Button from '../../components/ui/Button';
 
 const dictionaries = { fr, en, 'pt-br': ptBr };
 
-export default function HomePage({
-  params: { locale },
+export default async function HomePage({
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   const dict =
     dictionaries[locale as keyof typeof dictionaries] ?? dictionaries.fr;
 

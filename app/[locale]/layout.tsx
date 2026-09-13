@@ -13,14 +13,14 @@ export const metadata: Metadata = {
   description: "L'art parle là où les mots ne suffisent plus.",
 };
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
 
   // Asire locale valab
   if (!locales.includes(locale as (typeof locales)[number])) notFound();
