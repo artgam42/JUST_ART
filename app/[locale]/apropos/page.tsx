@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import fr from '../../../i18n/dictionaries/fr.json';
 import en from '../../../i18n/dictionaries/en.json';
 import ptBr from '../../../i18n/dictionaries/pt-br.json';
@@ -9,14 +10,43 @@ import Footer from '../../../components/layout/Footer';
 
 const dictionaries = { fr, en, 'pt-br': ptBr };
 
+function getDict(locale: string) {
+  const localeKey = (['fr', 'en', 'pt-br'].includes(locale) ? locale : 'fr') as Locale;
+  return dictionaries[localeKey];
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const dict = getDict(locale);
+  return {
+    title: dict.seo.about.title,
+    description: dict.seo.about.description,
+    alternates: {
+      languages: {
+        fr: '/fr/apropos',
+        en: '/en/apropos',
+        'pt-br': '/pt-br/apropos',
+      },
+    },
+    openGraph: {
+      title: dict.seo.about.title,
+      description: dict.seo.about.description,
+      locale,
+    },
+  };
+}
+
 export default async function AproposPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const localeKey = (['fr', 'en', 'pt-br'].includes(locale) ? locale : 'fr') as Locale;
-  const dict = dictionaries[localeKey];
+  const dict = getDict(locale);
   const t = dict.aboutPage;
 
   return (

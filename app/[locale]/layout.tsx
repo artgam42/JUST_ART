@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { locales } from '../../i18n/config';
-import React from 'react';
-import '../globals.css';   // (opsyonèl, men li pa koze erè)
+import '../globals.css';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://justart-agency.vercel.app'),
   title: 'JUST ART',
   description: "L'art parle là où les mots ne suffisent plus.",
 };
@@ -21,8 +21,6 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-
-  // Asire locale valab
   if (!locales.includes(locale as (typeof locales)[number])) notFound();
 
   return (
@@ -31,4 +29,3 @@ export default async function LocaleLayout({
     </html>
   );
 }
-

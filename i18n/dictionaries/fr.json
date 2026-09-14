@@ -136,5 +136,27 @@
   "footer": {
     "tagline": "L'art parle là où les mots ne suffisent plus.",
     "copyright": "© 2025 JUST ART. Tous droits réservés."
+  },
+  "seo": {
+    "home": {
+      "title": "JUST ART — Agence créative multidisciplinaire",
+      "description": "JUST ART rassemble des experts en design, vidéo, digital et stratégie pour donner à votre marque une identité forte et cohérente."
+    },
+    "portfolio": {
+      "title": "Portfolio — JUST ART",
+      "description": "Découvrez nos réalisations en branding, logo, flyer, banner et plus encore."
+    },
+    "training": {
+      "title": "Formation & Mentorship — JUST ART",
+      "description": "Un espace d'apprentissage où les jeunes talents progressent aux côtés de professionnels expérimentés."
+    },
+    "about": {
+      "title": "À propos — JUST ART",
+      "description": "Découvrez la mission, les valeurs et le modèle de collaboration de JUST ART."
+    },
+    "contact": {
+      "title": "Contact — JUST ART",
+      "description": "Une question, un devis, un projet en tête ? Contactez JUST ART dès aujourd'hui."
+    }
   }
 }

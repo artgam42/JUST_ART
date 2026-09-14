@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import fr from '../../../i18n/dictionaries/fr.json';
 import en from '../../../i18n/dictionaries/en.json';
 import ptBr from '../../../i18n/dictionaries/pt-br.json';
@@ -10,6 +11,36 @@ import Footer from '../../../components/layout/Footer';
 import PortfolioGrid from '../../../components/portfolio/PortfolioGrid';
 
 const dictionaries = { fr, en, 'pt-br': ptBr };
+
+function getDict(locale: string) {
+  const localeKey = (['fr', 'en', 'pt-br'].includes(locale) ? locale : 'fr') as Locale;
+  return dictionaries[localeKey];
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const dict = getDict(locale);
+  return {
+    title: dict.seo.portfolio.title,
+    description: dict.seo.portfolio.description,
+    alternates: {
+      languages: {
+        fr: '/fr/portfolio',
+        en: '/en/portfolio',
+        'pt-br': '/pt-br/portfolio',
+      },
+    },
+    openGraph: {
+      title: dict.seo.portfolio.title,
+      description: dict.seo.portfolio.description,
+      locale,
+    },
+  };
+}
 
 export default async function PortfolioPage({
   params,
@@ -30,8 +61,8 @@ export default async function PortfolioPage({
     <PageShell variant="dark">
       <Header locale={locale} nav={dict.nav} />
 
-      <Container className="py-10">
-        <h1 className="font-display text-xl font-medium mb-2">
+      <Container className="py-10 max-w-4xl">
+        <h1 className="font-display text-xl sm:text-2xl font-medium mb-2">
           {dict.portfolioPage.title}
         </h1>
         <p className="text-sm text-blue-100 mb-8">{dict.portfolioPage.intro}</p>

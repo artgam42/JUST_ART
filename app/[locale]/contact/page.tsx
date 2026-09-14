@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import fr from '../../../i18n/dictionaries/fr.json';
 import en from '../../../i18n/dictionaries/en.json';
 import ptBr from '../../../i18n/dictionaries/pt-br.json';
@@ -11,7 +12,37 @@ import ContactForm from '../../../components/forms/ContactForm';
 const dictionaries = { fr, en, 'pt-br': ptBr };
 
 // ⚠️ Ranplase nimewo sa a ak vrè nimewo WhatsApp JUST ART la (fòma: kòd peyi + nimewo, san + ni espas)
-const WHATSAPP_NUMBER = '50931274800';
+const WHATSAPP_NUMBER = '00000000000';
+
+function getDict(locale: string) {
+  const localeKey = (['fr', 'en', 'pt-br'].includes(locale) ? locale : 'fr') as Locale;
+  return dictionaries[localeKey];
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const dict = getDict(locale);
+  return {
+    title: dict.seo.contact.title,
+    description: dict.seo.contact.description,
+    alternates: {
+      languages: {
+        fr: '/fr/contact',
+        en: '/en/contact',
+        'pt-br': '/pt-br/contact',
+      },
+    },
+    openGraph: {
+      title: dict.seo.contact.title,
+      description: dict.seo.contact.description,
+      locale,
+    },
+  };
+}
 
 export default async function ContactPage({
   params,
@@ -19,8 +50,7 @@ export default async function ContactPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const localeKey = (['fr', 'en', 'pt-br'].includes(locale) ? locale : 'fr') as Locale;
-  const dict = dictionaries[localeKey];
+  const dict = getDict(locale);
   const t = dict.contactPage;
 
   return (

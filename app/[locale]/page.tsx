@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import fr from '../../i18n/dictionaries/fr.json';
 import en from '../../i18n/dictionaries/en.json';
 import ptBr from '../../i18n/dictionaries/pt-br.json';
@@ -14,6 +15,32 @@ import Link from 'next/link';
 
 const dictionaries = { fr, en, 'pt-br': ptBr };
 
+function getDict(locale: string) {
+  const localeKey = (['fr', 'en', 'pt-br'].includes(locale) ? locale : 'fr') as Locale;
+  return dictionaries[localeKey];
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const dict = getDict(locale);
+  return {
+    title: dict.seo.home.title,
+    description: dict.seo.home.description,
+    alternates: {
+      languages: { fr: '/fr', en: '/en', 'pt-br': '/pt-br' },
+    },
+    openGraph: {
+      title: dict.seo.home.title,
+      description: dict.seo.home.description,
+      locale,
+    },
+  };
+}
+
 export default async function HomePage({
   params,
 }: {
@@ -29,48 +56,52 @@ export default async function HomePage({
     <PageShell variant="dark">
       <Header locale={locale} nav={dict.nav} />
 
-      <Container className="text-center py-16">
-        <h1 className="font-display text-2xl font-medium mb-4">{dict.hero.title}</h1>
-        <p className="text-sm text-blue-100 mb-6">{dict.hero.subtitle}</p>
+      <Container className="text-center py-16 sm:py-24 max-w-3xl">
+        <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl font-medium mb-4">
+          {dict.hero.title}
+        </h1>
+        <p className="text-sm sm:text-base text-blue-100 mb-6 max-w-lg mx-auto">
+          {dict.hero.subtitle}
+        </p>
         <Button variant="primary">{dict.hero.cta}</Button>
       </Container>
 
-      <Container className="pb-12">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <Container className="pb-12 max-w-4xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {dict.pillars.map((p) => (
             <Card key={p.title} title={p.title} description={p.description} />
           ))}
         </div>
       </Container>
 
-      <Container className="pb-12">
+      <Container className="pb-12 max-w-4xl">
         <p className="text-xs text-blue-100 mb-3 uppercase tracking-wide">
           {dict.services.title}
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {dict.services.items.map((s) => (
             <Card key={s.title} title={s.title} description={s.description} />
           ))}
         </div>
       </Container>
 
-      <Container className="pb-12">
+      <Container className="pb-12 max-w-4xl">
         <p className="text-xs text-blue-100 mb-3 uppercase tracking-wide">
           {dict.whyChooseUs.title}
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {dict.whyChooseUs.items.map((w) => (
             <Card key={w.title} title={w.title} description={w.description} />
           ))}
         </div>
       </Container>
 
-      <Container className="pb-12">
+      <Container className="pb-12 max-w-4xl">
         <p className="text-xs text-blue-100 mb-3 uppercase tracking-wide">
           {dict.portfolioTeaser.title}
         </p>
         <p className="text-sm mb-4">{dict.portfolioTeaser.intro}</p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
           {featuredSlugs.map((slug) => (
             <Link
               key={slug}
@@ -86,12 +117,12 @@ export default async function HomePage({
         </Button>
       </Container>
 
-      <Container className="pb-12">
+      <Container className="pb-12 max-w-4xl">
         <p className="text-xs text-blue-100 mb-1 uppercase tracking-wide">
           {dict.packages.title}
         </p>
         <p className="text-xs text-blue-100/70 mb-4">{dict.packages.note}</p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {dict.packages.items.map((pkg, i) => (
             <PackageCard
               key={pkg.name}
@@ -105,7 +136,7 @@ export default async function HomePage({
       </Container>
 
       <div className="bg-accent text-white text-center py-10 px-4">
-        <p className="text-sm mb-4">{dict.finalCta.title}</p>
+        <p className="text-sm sm:text-base mb-4">{dict.finalCta.title}</p>
         <Button href={`/${locale}/contact`} variant="secondary">
           {dict.finalCta.cta}
         </Button>

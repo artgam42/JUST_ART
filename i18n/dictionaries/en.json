@@ -136,5 +136,27 @@
   "footer": {
     "tagline": "Art speaks where words no longer suffice.",
     "copyright": "© 2025 JUST ART. All rights reserved."
+  },
+  "seo": {
+    "home": {
+      "title": "JUST ART — Multidisciplinary Creative Agency",
+      "description": "JUST ART brings together experts in design, video, digital, and strategy to give your brand a strong, cohesive identity."
+    },
+    "portfolio": {
+      "title": "Portfolio — JUST ART",
+      "description": "Explore our work in branding, logo design, flyers, banners, and more."
+    },
+    "training": {
+      "title": "Training & Mentorship — JUST ART",
+      "description": "A learning space where young talents grow alongside experienced professionals."
+    },
+    "about": {
+      "title": "About — JUST ART",
+      "description": "Learn about JUST ART's mission, values, and collaboration model."
+    },
+    "contact": {
+      "title": "Contact — JUST ART",
+      "description": "A question, a quote request, a project in mind? Get in touch with JUST ART today."
+    }
   }
 }

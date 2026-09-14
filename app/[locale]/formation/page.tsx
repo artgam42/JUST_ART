@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import fr from '../../../i18n/dictionaries/fr.json';
 import en from '../../../i18n/dictionaries/en.json';
 import ptBr from '../../../i18n/dictionaries/pt-br.json';
@@ -10,14 +11,43 @@ import ApplicationForm from '../../../components/forms/ApplicationForm';
 
 const dictionaries = { fr, en, 'pt-br': ptBr };
 
+function getDict(locale: string) {
+  const localeKey = (['fr', 'en', 'pt-br'].includes(locale) ? locale : 'fr') as Locale;
+  return dictionaries[localeKey];
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const dict = getDict(locale);
+  return {
+    title: dict.seo.training.title,
+    description: dict.seo.training.description,
+    alternates: {
+      languages: {
+        fr: '/fr/formation',
+        en: '/en/formation',
+        'pt-br': '/pt-br/formation',
+      },
+    },
+    openGraph: {
+      title: dict.seo.training.title,
+      description: dict.seo.training.description,
+      locale,
+    },
+  };
+}
+
 export default async function FormationPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const localeKey = (['fr', 'en', 'pt-br'].includes(locale) ? locale : 'fr') as Locale;
-  const dict = dictionaries[localeKey];
+  const dict = getDict(locale);
   const t = dict.trainingPage;
 
   return (
