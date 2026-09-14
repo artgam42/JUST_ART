@@ -11,6 +11,128 @@
     "subtitle": "JUST ART rassemble des experts en design, vidéo, digital et stratégie pour donner à votre marque une identité forte et cohérente.",
     "cta": "Découvrir nos services"
   },
+  "pillars": [
+    { "title": "Soutien digital & création de contenu", "description": "Branding, photographie, développement web et marketing digital, pensés pour faire rayonner votre marque." },
+    { "title": "Accompagnement des entreprises", "description": "Structuration de votre identité et de votre gestion numérique, avec une équipe multidisciplinaire à vos côtés." },
+    { "title": "Formation & mentorat", "description": "Un espace où les jeunes talents apprennent aux côtés de professionnels expérimentés." }
+  ],
+  "services": {
+    "title": "Nos services",
+    "items": [
+      { "title": "Design Graphique & Branding", "description": "Logo, flyer, carte de visite, letterhead, brochure, poster, badge, certificat, carte de mariage, stickers, cover musique, cover livre." },
+      { "title": "Photo & Vidéo", "description": "Séances photo, tournage vidéo, montage, vidéos lyrics, reels." },
+      { "title": "Animation & Motion", "description": "Animation 2D, Motion Design, animation de logo." },
+      { "title": "Digital & Web", "description": "Web design, marketing digital, gestion des réseaux sociaux." }
+    ]
+  },
+  "whyChooseUs": {
+    "title": "Pourquoi choisir JUST ART",
+    "items": [
+      { "title": "Multidisciplinarité", "description": "Une seule agence, toutes les expertises dont votre marque a besoin." },
+      { "title": "Collaboration d'experts", "description": "Un réseau de professionnels indépendants qui travaillent ensemble, pas en silo." },
+      { "title": "Originalité artistique", "description": "Une approche créative pensée pour vous démarquer, pas des templates génériques." },
+      { "title": "Professionnalisme", "description": "Une gestion de projet sérieuse, de la première idée à la livraison finale." }
+    ]
+  },
+  "portfolioTeaser": {
+    "title": "Portfolio en vedette",
+    "intro": "Découvrez quelques-unes de nos réalisations récentes.",
+    "cta": "Voir tout le portfolio"
+  },
+  "portfolioPage": {
+    "title": "Portfolio",
+    "intro": "Un aperçu de notre travail, classé par catégorie.",
+    "categories": [
+      { "key": "branding", "label": "Branding" },
+      { "key": "logo", "label": "Logo" },
+      { "key": "flyer", "label": "Flyer" },
+      { "key": "banner", "label": "Banner" },
+      { "key": "autres", "label": "Autres designs" }
+    ],
+    "emptyState": "Projets à venir dans cette catégorie."
+  },
+  "trainingPage": {
+    "title": "Apprendre aux côtés de professionnels.",
+    "intro": "Le secteur du design est souvent autodidacte. JUST ART crée un espace d'apprentissage où nos experts partagent leur expérience concrète et offrent des opportunités de stage aux jeunes talents.",
+    "howItWorksTitle": "Comment ça fonctionne",
+    "howItWorks": [
+      "Un accompagnement par des collaborateurs de niveau 1, directement impliqués dans la gestion et la création de contenu chez JUST ART.",
+      "Des missions concrètes, pas seulement de la théorie.",
+      "Une mise en réseau avec d'autres professionnels indépendants du secteur."
+    ],
+    "whoTitle": "Pour qui ?",
+    "who": "Jeunes designers, vidéastes, monteurs et créatifs souhaitant se professionnaliser et gagner une première expérience solide.",
+    "form": {
+      "name": "Nom complet",
+      "email": "Email",
+      "phone": "Téléphone",
+      "interest": "Domaine d'intérêt",
+      "interestOptions": ["Design graphique", "Vidéo", "Motion", "Web", "Autre"],
+      "portfolio": "Portfolio ou lien (optionnel)",
+      "message": "Message",
+      "submit": "Postuler maintenant",
+      "sending": "Envoi en cours...",
+      "success": "Merci pour votre candidature ! Nous l'étudierons avec attention.",
+      "error": "Une erreur est survenue. Merci de réessayer ou de nous écrire directement sur WhatsApp."
+    }
+  },
+  "aboutPage": {
+    "intro": "Le monde du freelancing a permis à de nombreux professionnels de travailler en toute indépendance. Mais cette autonomie a ses limites : les entreprises recherchent souvent des solutions globales, nécessitant plusieurs expertises qu'un seul professionnel ne peut pas toujours offrir. JUST ART répond à ce besoin en regroupant des experts de différents domaines et en proposant des solutions de gestion et de formation.",
+    "goalsTitle": "Nos objectifs & valeurs",
+    "goalsIntro": "JUST ART repose sur trois piliers fondamentaux :",
+    "goals": [
+      "Rassembler des professionnels pour offrir un service multidisciplinaire.",
+      "Soutenir les entreprises en matière de communication visuelle et de gestion.",
+      "Former et accompagner les jeunes professionnels."
+    ],
+    "goalsClosing": "Notre philosophie repose sur l'originalité artistique et le professionnalisme, pour offrir à nos clients un positionnement unique sur le marché.",
+    "storyTitle": "Notre genèse",
+    "story": "JUST ART a été officiellement lancée en 2025, après une longue réflexion sur les difficultés des designers à se faire reconnaître sur le marché. Le digital étant un levier essentiel pour la visibilité des entreprises, JUST ART tire profit de cette réalité pour offrir des solutions adaptées aux besoins des entrepreneurs.",
+    "modelTitle": "Notre modèle de collaboration",
+    "modelIntro": "JUST ART fonctionne sans employés fixes, sur un modèle de collaboration :",
+    "levels": [
+      { "title": "Collaborateurs de niveau 1", "description": "impliqués directement dans la gestion et la création de contenu." },
+      { "title": "Collaborateurs de niveau 2", "description": "sollicités pour des missions spécifiques." }
+    ],
+    "modelClosing": "Chaque professionnel conserve son indépendance tout en bénéficiant d'une mise en réseau.",
+    "commitmentTitle": "Notre engagement",
+    "commitment": "JUST ART souhaite renforcer la présence numérique des entreprises tout en offrant aux jeunes professionnels des opportunités concrètes d'emploi et de formation — un écosystème bénéfique à la fois aux entreprises et aux créatifs, avec un accent sur l'innovation, la qualité et la responsabilité sociale."
+  },
+  "contactPage": {
+    "title": "Discutons de votre projet.",
+    "intro": "Une question, un devis, un projet en tête ? Écrivez-nous ou contactez-nous directement sur WhatsApp.",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "Merci ! Votre message a bien été envoyé, nous vous répondrons rapidement.",
+      "error": "Une erreur est survenue. Merci de réessayer ou de nous écrire directement sur WhatsApp."
+    },
+    "whatsapp": {
+      "title": "Contact direct",
+      "button": "Discuter sur WhatsApp"
+    },
+    "social": {
+      "title": "Réseaux sociaux"
+    }
+  },
+  "packages": {
+    "title": "Package & Prix Spécial",
+    "note": "Offres présentées sans prix affiché — tarif communiqué sur devis.",
+    "cta": "Demander un devis",
+    "items": [
+      { "name": "Start", "features": ["Présentation de 2 propositions de logo", "Fichiers PNG & JPG", "3 mockups", "Guide logo"] },
+      { "name": "Build", "features": ["Présentation de 2 propositions de logo", "Fichiers PNG & JPG", "3 mockups", "Guide logo", "Carte de visite", "Letterhead"] },
+      { "name": "Grow", "features": ["Présentation de 3 propositions de logo", "Fichiers PNG & JPG", "3 mockups", "Guide logo", "Carte de visite", "Letterhead", "Badge & Flyer"] }
+    ]
+  },
+  "finalCta": {
+    "title": "Prêt à donner vie à votre marque ?",
+    "cta": "Contactez-nous"
+  },
   "footer": {
     "tagline": "L'art parle là où les mots ne suffisent plus.",
     "copyright": "© 2025 JUST ART. Tous droits réservés."

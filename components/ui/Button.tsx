@@ -7,6 +7,7 @@ type ButtonProps = {
   children: ReactNode;
   onClick?: () => void;
   type?: 'button' | 'submit';
+  disabled?: boolean;
 };
 
 const base = 'inline-block text-sm px-6 py-3 transition-opacity hover:opacity-90';
@@ -21,8 +22,9 @@ export default function Button({
   children,
   onClick,
   type = 'button',
+  disabled = false,
 }: ButtonProps) {
-  const className = `${base} ${variants[variant]}`;
+  const className = `${base} ${variants[variant]} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`;
 
   if (href) {
     return (
@@ -33,7 +35,7 @@ export default function Button({
   }
 
   return (
-    <button type={type} onClick={onClick} className={className}>
+    <button type={type} onClick={onClick} disabled={disabled} className={className}>
       {children}
     </button>
   );

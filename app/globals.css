@@ -1,6 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #000028;
+  --color-accent: #0000ff;
+  --font-display: "Creato Display", sans-serif;
+  --font-signature: "Waiting for the Bridge", cursive;
+}
 
 @font-face {
   font-family: 'Creato Display';
@@ -49,6 +54,13 @@
   src: url('/fonts/Waiting-on-the-Bridge.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
+}
+
+/* Règ design JUST ART: san radius, pwen final, pa negosyab */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
 }
 
 body {
