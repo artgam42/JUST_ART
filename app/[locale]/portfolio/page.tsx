@@ -3,6 +3,7 @@ import fr from '../../../i18n/dictionaries/fr.json';
 import en from '../../../i18n/dictionaries/en.json';
 import ptBr from '../../../i18n/dictionaries/pt-br.json';
 import { brands, brandSlugs } from '../../../i18n/data/brands';
+import { getBrandImages, getCategoryImages } from '../../../lib/portfolio-images';
 import type { Locale } from '../../../i18n/config';
 import PageShell from '../../../components/ui/PageShell';
 import Container from '../../../components/ui/Container';
@@ -28,11 +29,7 @@ export async function generateMetadata({
     title: dict.seo.portfolio.title,
     description: dict.seo.portfolio.description,
     alternates: {
-      languages: {
-        fr: '/fr/portfolio',
-        en: '/en/portfolio',
-        'pt-br': '/pt-br/portfolio',
-      },
+      languages: { fr: '/fr/portfolio', en: '/en/portfolio', 'pt-br': '/pt-br/portfolio' },
     },
     openGraph: {
       title: dict.seo.portfolio.title,
@@ -52,10 +49,21 @@ export default async function PortfolioPage({
   const dict = dictionaries[localeKey];
   const localeBrands = brands[localeKey];
 
-  const brandList = brandSlugs.map((slug) => ({
-    slug,
-    name: localeBrands[slug].name,
-  }));
+  const brandList = brandSlugs.map((slug) => {
+    const images = getBrandImages(slug);
+    return {
+      slug,
+      name: localeBrands[slug].name,
+      cover: images[0] ? { src: images[0].src, alt: localeBrands[slug].name } : null,
+    };
+  });
+
+  const categoryImages = {
+    logo: getCategoryImages('logo'),
+    flyer: getCategoryImages('flyer'),
+    banner: getCategoryImages('banner'),
+    autres: getCategoryImages('autres'),
+  };
 
   return (
     <PageShell variant="dark">
@@ -71,6 +79,7 @@ export default async function PortfolioPage({
           locale={locale}
           categories={dict.portfolioPage.categories}
           brands={brandList}
+          categoryImages={categoryImages}
           emptyState={dict.portfolioPage.emptyState}
         />
       </Container>

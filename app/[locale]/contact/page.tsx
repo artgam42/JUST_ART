@@ -12,7 +12,7 @@ import ContactForm from '../../../components/forms/ContactForm';
 const dictionaries = { fr, en, 'pt-br': ptBr };
 
 // ⚠️ Ranplase nimewo sa a ak vrè nimewo WhatsApp JUST ART la (fòma: kòd peyi + nimewo, san + ni espas)
-const WHATSAPP_NUMBER = '00000000000';
+const WHATSAPP_NUMBER = '50931274800';
 
 function getDict(locale: string) {
   const localeKey = (['fr', 'en', 'pt-br'].includes(locale) ? locale : 'fr') as Locale;

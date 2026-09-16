@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 type NavDict = {
   home: string;
@@ -30,6 +31,9 @@ export default function Header({
   const border = variant === 'dark' ? 'border-white/10' : 'border-black/10';
   const bg = variant === 'dark' ? 'bg-navy' : 'bg-white';
 
+  // Fon fonse (navy) → logo an blan. Fon blan → logo an navy.
+  const logoSrc = variant === 'dark' ? '/logo-white.svg' : '/logo-navy.svg';
+
   const links = [
     { href: `/${locale}`, label: nav.home },
     { href: `/${locale}/portfolio`, label: nav.portfolio },
@@ -41,12 +45,15 @@ export default function Header({
   return (
     <header className={`relative border-b ${border} text-sm`}>
       <div className="flex items-center justify-between px-4 py-3">
-        <Link
-          href={`/${locale}`}
-          className="font-display font-medium"
-          onClick={() => setOpen(false)}
-        >
-          JUST ART
+        <Link href={`/${locale}`} onClick={() => setOpen(false)}>
+          <Image
+            src={logoSrc}
+            alt="JUST ART"
+            width={120}
+            height={32}
+            priority
+            className="h-8 w-auto"
+          />
         </Link>
 
         <nav className="hidden sm:flex gap-4 text-xs">
