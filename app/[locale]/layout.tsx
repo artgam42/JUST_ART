@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { locales } from '../../i18n/config';
 import '../globals.css';
 
@@ -13,6 +14,8 @@ export const metadata: Metadata = {
   title: 'JUST ART',
   description: "L'art parle là où les mots ne suffisent plus.",
 };
+
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 // export default function LocaleLayout({
 //   children,
@@ -37,7 +40,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
-        {/* Preload sèlman 2 fon ki pi itilize yo — akselere premye afichaj tèks la */}
         <link
           rel="preload"
           href="/fonts/CreatoDisplay-Regular.woff2"
@@ -54,6 +56,8 @@ export default async function LocaleLayout({
         />
       </head>
       <body>{children}</body>
+      {/* Si varyab la pa configire, GA pa chaje ditou — pa gen erè */}
+      {GA_MEASUREMENT_ID && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
     </html>
   );
 }
