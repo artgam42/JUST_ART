@@ -7,7 +7,7 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Art speaks where words no longer suffice.",
+    "title": "Art speaks where words\nno longer suffice.",
     "subtitle": "JUST ART brings together experts in design, video, digital, and strategy to give your brand a strong, cohesive identity.",
     "cta": "Discover our services"
   },
@@ -49,7 +49,8 @@
       { "key": "banner", "label": "Banner" },
       { "key": "autres", "label": "Other designs" }
     ],
-    "emptyState": "Projects coming soon in this category."
+    "emptyState": "Projects coming soon in this category.",
+    "backToPortfolio": "← Back to portfolio"
   },
   "trainingPage": {
     "title": "Learning alongside professionals.",

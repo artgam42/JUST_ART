@@ -53,10 +53,22 @@ export default async function AproposPage({
     <PageShell variant="dark">
       <Header locale={locale} nav={dict.nav} />
 
-      <Container className="py-12 max-w-xl">
-        <p className="text-sm text-blue-100 mb-10">{t.intro}</p>
+      <Container className="py-12 max-w-2xl">
+        <p className="text-sm sm:text-base text-blue-100 mb-8 leading-relaxed">{t.intro}</p>
 
-        <p className="text-xs text-blue-100 mb-3 uppercase tracking-wide">{t.goalsTitle}</p>
+        {/* 3 poto mitan (Pillars) */}
+        <div className="space-y-4 mb-12">
+          {dict.pillars.map((p) => (
+            <div key={p.title} className="border border-white/15 p-5">
+              <h3 className="font-display text-base sm:text-lg font-bold uppercase text-[#0000ff] mb-2">
+                {p.title}
+              </h3>
+              <p className="text-sm text-blue-100 leading-relaxed">{p.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="font-display text-lg sm:text-xl font-bold uppercase tracking-wider text-[#0000ff] mb-3">{t.goalsTitle}</h2>
         <p className="text-sm mb-3">{t.goalsIntro}</p>
         <ul className="text-sm space-y-2 mb-4 list-disc list-inside text-blue-100">
           {t.goals.map((g) => (
@@ -65,10 +77,10 @@ export default async function AproposPage({
         </ul>
         <p className="text-sm mb-10">{t.goalsClosing}</p>
 
-        <p className="text-xs text-blue-100 mb-3 uppercase tracking-wide">{t.storyTitle}</p>
-        <p className="text-sm mb-10">{t.story}</p>
+        <h2 className="font-display text-lg sm:text-xl font-bold uppercase tracking-wider text-[#0000ff] mb-3">{t.storyTitle}</h2>
+        <p className="text-sm mb-10 leading-relaxed">{t.story}</p>
 
-        <p className="text-xs text-blue-100 mb-3 uppercase tracking-wide">{t.modelTitle}</p>
+        <h2 className="font-display text-lg sm:text-xl font-bold uppercase tracking-wider text-[#0000ff] mb-3">{t.modelTitle}</h2>
         <p className="text-sm mb-3">{t.modelIntro}</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
           {t.levels.map((lvl) => (
@@ -80,8 +92,8 @@ export default async function AproposPage({
         </div>
         <p className="text-sm mb-10">{t.modelClosing}</p>
 
-        <p className="text-xs text-blue-100 mb-3 uppercase tracking-wide">{t.commitmentTitle}</p>
-        <p className="text-sm">{t.commitment}</p>
+        <h2 className="font-display text-lg sm:text-xl font-bold uppercase tracking-wider text-[#0000ff] mb-3">{t.commitmentTitle}</h2>
+        <p className="text-sm leading-relaxed">{t.commitment}</p>
       </Container>
 
       <Footer locale={locale} nav={dict.nav} footer={dict.footer} />

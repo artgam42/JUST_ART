@@ -69,8 +69,8 @@ export default async function PortfolioPage({
     <PageShell variant="dark">
       <Header locale={locale} nav={dict.nav} />
 
-      <Container className="py-10 max-w-4xl">
-        <h1 className="font-display text-xl sm:text-2xl font-medium mb-2">
+      <Container className="py-10">
+        <h1 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-wider text-[#0000ff] mb-2">
           {dict.portfolioPage.title}
         </h1>
         <p className="text-sm text-blue-100 mb-8">{dict.portfolioPage.intro}</p>

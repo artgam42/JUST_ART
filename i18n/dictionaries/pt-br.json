@@ -7,7 +7,7 @@
     "contact": "Contato"
   },
   "hero": {
-    "title": "A arte fala onde as palavras já não bastam.",
+    "title": "A arte fala onde as palavras\njá não bastam.",
     "subtitle": "A JUST ART reúne especialistas em design, vídeo, digital e estratégia para dar à sua marca uma identidade forte e coerente.",
     "cta": "Conheça nossos serviços"
   },
@@ -49,7 +49,8 @@
       { "key": "banner", "label": "Banner" },
       { "key": "autres", "label": "Outros designs" }
     ],
-    "emptyState": "Projetos em breve nesta categoria."
+    "emptyState": "Projetos em breve nesta categoria.",
+    "backToPortfolio": "← Voltar ao portfólio"
   },
   "trainingPage": {
     "title": "Aprender ao lado de profissionais.",

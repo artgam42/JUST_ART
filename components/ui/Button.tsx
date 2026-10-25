@@ -10,7 +10,7 @@ type ButtonProps = {
   disabled?: boolean;
 };
 
-const base = 'inline-block text-sm px-6 py-3 transition-opacity hover:opacity-90';
+const base = 'inline-block text-sm px-4 py-2 transition-opacity hover:opacity-90';
 const variants = {
   primary: 'bg-accent text-white',
   secondary: 'border border-current',

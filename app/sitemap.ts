@@ -5,7 +5,7 @@ import { brandSlugs } from '../i18n/data/brands';
 const SITE_URL = 'https://justart-agency.vercel.app';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPaths = ['', '/portfolio', '/formation', '/apropos', '/contact'];
+  const staticPaths = ['', '/portfolio', '/apropos', '/contact'];
   const entries: MetadataRoute.Sitemap = [];
 
   for (const locale of locales) {

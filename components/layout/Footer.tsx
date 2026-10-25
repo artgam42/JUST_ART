@@ -28,14 +28,21 @@ export default function Footer({
   const muted = variant === 'dark' ? 'text-blue-100' : 'text-gray-500';
 
   return (
-    <footer className={`border-t ${border} px-4 py-8 text-center text-xs ${muted}`}>
-      <p className="mb-4">{footer.tagline}</p>
-      <nav className="flex justify-center gap-3 mb-4 flex-wrap">
-        <Link href={`/${locale}`}>{nav.home}</Link>
-        <Link href={`/${locale}/portfolio`}>{nav.portfolio}</Link>
-        <Link href={`/${locale}/formation`}>{nav.training}</Link>
-        <Link href={`/${locale}/apropos`}>{nav.about}</Link>
-        <Link href={`/${locale}/contact`}>{nav.contact}</Link>
+    <footer className={`border-t ${border} px-4 py-10 text-center text-xs ${muted}`}>
+      <p className="mb-4 uppercase tracking-wider font-medium">{footer.tagline}</p>
+      <nav className="flex justify-center gap-4 sm:gap-6 mb-4 flex-wrap font-medium">
+        <Link href={`/${locale}`} className="text-[#0000ff] hover:opacity-80 transition-opacity">
+          {nav.home}
+        </Link>
+        <Link href={`/${locale}/portfolio`} className="text-[#0000ff] hover:opacity-80 transition-opacity">
+          {nav.portfolio}
+        </Link>
+        <Link href={`/${locale}/apropos`} className="text-[#0000ff] hover:opacity-80 transition-opacity">
+          {nav.about}
+        </Link>
+        <Link href={`/${locale}/contact`} className="text-[#0000ff] hover:opacity-80 transition-opacity">
+          {nav.contact}
+        </Link>
       </nav>
       <div className="flex justify-center gap-3 mb-4">
         <a href="https://www.facebook.com/share/1Dc45vY5xv/" target="_blank" rel="noopener noreferrer">

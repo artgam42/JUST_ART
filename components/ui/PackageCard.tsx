@@ -10,14 +10,17 @@ type Props = {
 export default function PackageCard({ name, features, cta, highlighted = false }: Props) {
   return (
     <div
-      className={`p-4 flex flex-col ${
-        highlighted ? 'border-2 border-accent' : 'border border-white/15'
+      className={`p-6 flex flex-col bg-white text-navy ${
+        highlighted ? 'border-2 border-accent shadow-sm' : 'border border-black/15'
       }`}
     >
-      <p className="text-sm font-medium mb-3">{name}</p>
-      <ul className="text-xs text-blue-100 mb-4 space-y-1 flex-1">
+      <p className="text-base font-bold mb-4 uppercase tracking-wide">{name}</p>
+      <ul className="text-xs text-gray-600 mb-6 space-y-2 flex-1">
         {features.map((f) => (
-          <li key={f}>{f}</li>
+          <li key={f} className="flex items-start gap-2">
+            <span className="text-[#0000ff] font-bold">•</span>
+            <span>{f}</span>
+          </li>
         ))}
       </ul>
       <Button variant={highlighted ? 'primary' : 'secondary'}>{cta}</Button>
