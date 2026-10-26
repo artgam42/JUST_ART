@@ -8,6 +8,7 @@ type ButtonProps = {
   onClick?: () => void;
   type?: 'button' | 'submit';
   disabled?: boolean;
+  className?: string;
 };
 
 const base = 'inline-block text-sm px-4 py-2 transition-opacity hover:opacity-90';
@@ -23,6 +24,7 @@ export default function Button({
   onClick,
   type = 'button',
   disabled = false,
+  className: extraClassName = '',
 }: ButtonProps) {
   const className = `${base} ${variants[variant]} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`;
 
