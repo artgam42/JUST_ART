@@ -8,11 +8,10 @@ import Container from '../../../components/ui/Container';
 import Header from '../../../components/layout/Header';
 import Footer from '../../../components/layout/Footer';
 import ContactForm from '../../../components/forms/ContactForm';
+import { whatsappLink } from '../../../lib/whatsapp';
+import { getSocialLinks } from '../../../lib/social';
 
 const dictionaries = { fr, en, 'pt-br': ptBr };
-
-// ⚠️ Ranplase nimewo sa a ak vrè nimewo WhatsApp JUST ART la (fòma: kòd peyi + nimewo, san + ni espas)
-const WHATSAPP_NUMBER = '5511927282400';
 
 function getDict(locale: string) {
   const localeKey = (['fr', 'en', 'pt-br'].includes(locale) ? locale : 'fr') as Locale;
@@ -57,7 +56,7 @@ export default async function ContactPage({
     <PageShell variant="light">
       <Header locale={locale} nav={dict.nav} variant="light" />
 
-      <Container className="py-12">
+      <Container className="py-12 lg:max-w-4xl lg:mx-auto">
         <h1 className="font-display text-2xl sm:text-3xl font-bold uppercase tracking-wider text-[#0000ff] mb-2">{t.title}</h1>
         <p className="text-sm text-gray-600 mb-10">{t.intro}</p>
 
@@ -69,7 +68,7 @@ export default async function ContactPage({
               {t.whatsapp.title} :
             </span>
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-accent transition-colors text-sm"
@@ -83,30 +82,17 @@ export default async function ContactPage({
               {t.social.title} :
             </span>
             <div className="flex gap-4 text-sm text-navy font-medium">
-              <a
-                href="https://www.facebook.com/share/1Dc45vY5xv/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-accent transition-colors"
-              >
-                Facebook
-              </a>
-              <a
-                href="https://www.instagram.com/just.art.agency"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-accent transition-colors"
-              >
-                Instagram
-              </a>
-              <a
-                href="https://www.tiktok.com/@just.art.agency"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-accent transition-colors"
-              >
-                TikTok
-              </a>
+              {getSocialLinks(locale).map((s) => (
+                <a
+                  key={s.name}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors"
+                >
+                  {s.name}
+                </a>
+              ))}
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 type NavDict = {
   home: string;
@@ -30,6 +31,12 @@ export default function Header({
   const [open, setOpen] = useState(false);
   const border = variant === 'dark' ? 'border-white/10' : 'border-black/10';
   const bg = variant === 'dark' ? 'bg-navy' : 'bg-white';
+
+  const pathname = usePathname();
+
+  // Lyen aktif : Akèy = egzak ; lòt yo = menm chemen oswa sou-paj (ex. /portfolio/branding/big)
+  const isActive = (href: string) =>
+    href === `/${locale}` ? pathname === href : pathname === href || pathname.startsWith(`${href}/`);
 
   // Fon fonse (navy) → logo an blan. Fon blan → logo an navy.
   const logoSrc = variant === 'dark' ? '/logo-white.png' : '/logo-navy.png';
@@ -66,7 +73,7 @@ export default function Header({
 
             <nav className="hidden sm:flex gap-6 text-base">
               {links.map((l) => (
-                <Link key={l.href} href={l.href} className="hover:opacity-75 transition-opacity">
+                <Link key={l.href} href={l.href} className={isActive(l.href) ? 'text-[#0000ff]' : 'hover:opacity-75 transition-opacity'}>
                   {l.label}
                 </Link>
               ))}
@@ -109,12 +116,7 @@ export default function Header({
       {open && (
         <nav className={`sm:hidden flex flex-col border-t ${border} ${bg} text-base`}>
           {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="px-4 py-3 border-b border-current/10"
-              onClick={() => setOpen(false)}
-            >
+            <Link key={l.href} href={l.href} className={`px-4 py-3 border-b border-current/10 ${isActive(l.href) ? 'text-[#0000ff]' : ''}`} onClick={() => setOpen(false)}>
               {l.label}
             </Link>
           ))}

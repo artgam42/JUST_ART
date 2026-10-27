@@ -11,7 +11,8 @@ import type { Locale } from '../../i18n/config';
 import PageShell from '../../components/ui/PageShell';
 import Container from '../../components/ui/Container';
 import Button from '../../components/ui/Button';
-import Card from '../../components/ui/Card';
+import ServiceTags from '../../components/ui/ServiceTags';
+import WhyChooseList from '../../components/ui/WhyChooseList';
 import PackageCard from '../../components/ui/PackageCard';
 import Header from '../../components/layout/Header';
 import Footer from '../../components/layout/Footer';
@@ -114,22 +115,14 @@ export default async function HomePage({
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-wider text-[#0000ff] mb-6">
           {dict.services.title}
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {dict.services.items.map((s) => (
-            <Card key={s.title} title={s.title} description={s.description} />
-          ))}
-        </div>
+        <ServiceTags items={dict.services.items} />
       </Container>
 
       <Container className="pb-16 sm:pb-20">
         <h2 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-wider text-[#0000ff] mb-6">
           {dict.whyChooseUs.title}
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {dict.whyChooseUs.items.map((w) => (
-            <Card key={w.title} title={w.title} description={w.description} />
-          ))}
-        </div>
+        <WhyChooseList items={dict.whyChooseUs.items} />
       </Container>
 
       <Container className="pb-16 sm:pb-24">

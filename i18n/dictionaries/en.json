@@ -12,26 +12,68 @@
     "cta": "Discover our services"
   },
   "pillars": [
-    { "title": "Digital Support & Content Creation", "description": "Branding, photography, web development, and digital marketing, crafted to make your brand shine." },
-    { "title": "Business Support", "description": "Structuring your identity and digital management, with a multidisciplinary team by your side." },
-    { "title": "Training & Mentorship", "description": "A space where young talents learn alongside experienced professionals." }
+    {
+      "title": "Digital Support & Content Creation",
+      "description": "Branding, photography, web development, and digital marketing, crafted to make your brand shine."
+    },
+    {
+      "title": "Business Support",
+      "description": "Structuring your identity and digital management, with a multidisciplinary team by your side."
+    },
+    {
+      "title": "Training & Mentorship",
+      "description": "A space where young talents learn alongside experienced professionals."
+    }
   ],
   "services": {
     "title": "Our services",
     "items": [
-      { "title": "Graphic Design & Branding", "description": "Logo, flyer, business card, letterhead, brochure, poster, badge, certificate, wedding card, stickers, music cover, book cover." },
-      { "title": "Photo & Video", "description": "Photo shoots, video shoots, editing, lyric videos, reels." },
-      { "title": "Animation & Motion", "description": "2D animation, Motion Design, logo animation." },
-      { "title": "Digital & Web", "description": "Web design, digital marketing, social media management." }
+      "Branding",
+      "Logo",
+      "Flyer",
+      "Business Card",
+      "Letterhead",
+      "Brochure",
+      "Poster",
+      "Banner",
+      "Badge",
+      "Certificate",
+      "Wedding Card",
+      "Music Cover",
+      "Book Cover",
+      "Stickers",
+      "Photo",
+      "Video",
+      "Editing",
+      "Lyric Video",
+      "Reels",
+      "2D Animation",
+      "Motion Design",
+      "Logo Animation",
+      "Web Design",
+      "Digital Marketing",
+      "Social Media"
     ]
   },
   "whyChooseUs": {
     "title": "Why choose JUST ART",
     "items": [
-      { "title": "Multidisciplinary", "description": "One agency, every expertise your brand needs." },
-      { "title": "Expert collaboration", "description": "A network of independent professionals working together, not in silos." },
-      { "title": "Artistic originality", "description": "A creative approach designed to set you apart, not generic templates." },
-      { "title": "Professionalism", "description": "Serious project management, from first idea to final delivery." }
+      {
+        "title": "Multidisciplinary",
+        "description": "One agency, every expertise your brand needs."
+      },
+      {
+        "title": "Expert collaboration",
+        "description": "A network of independent professionals working together, not in silos."
+      },
+      {
+        "title": "Artistic originality",
+        "description": "A creative approach designed to set you apart, not generic templates."
+      },
+      {
+        "title": "Professionalism",
+        "description": "Serious project management, from first idea to final delivery."
+      }
     ]
   },
   "portfolioTeaser": {
@@ -43,11 +85,26 @@
     "title": "Portfolio",
     "intro": "A look at our work, organized by category.",
     "categories": [
-      { "key": "branding", "label": "Branding" },
-      { "key": "logo", "label": "Logo" },
-      { "key": "flyer", "label": "Flyer" },
-      { "key": "banner", "label": "Banner" },
-      { "key": "autres", "label": "Other designs" }
+      {
+        "key": "branding",
+        "label": "Branding"
+      },
+      {
+        "key": "logo",
+        "label": "Logo"
+      },
+      {
+        "key": "flyer",
+        "label": "Flyer"
+      },
+      {
+        "key": "banner",
+        "label": "Banner"
+      },
+      {
+        "key": "autres",
+        "label": "Other designs"
+      }
     ],
     "emptyState": "Projects coming soon in this category.",
     "backToPortfolio": "← Back to portfolio"
@@ -68,7 +125,13 @@
       "email": "Email",
       "phone": "Phone",
       "interest": "Area of interest",
-      "interestOptions": ["Graphic Design", "Video", "Motion", "Web", "Other"],
+      "interestOptions": [
+        "Graphic Design",
+        "Video",
+        "Motion",
+        "Web",
+        "Other"
+      ],
       "portfolio": "Portfolio or link (optional)",
       "message": "Message",
       "submit": "Apply now",
@@ -78,26 +141,25 @@
     }
   },
   "aboutPage": {
-    "intro": "Freelancing has allowed many professionals to work independently. But this independence has its limits: businesses often need comprehensive solutions requiring multiple areas of expertise that a single professional can't always provide. JUST ART meets this need by bringing together experts from different fields and offering management and training solutions.",
-    "goalsTitle": "Our goals & values",
-    "goalsIntro": "JUST ART is built on three core pillars:",
-    "goals": [
-      "Bringing professionals together to offer a multidisciplinary service.",
-      "Supporting businesses with visual communication and management.",
-      "Training and mentoring young professionals."
-    ],
-    "goalsClosing": "Our philosophy is rooted in artistic originality and professionalism, giving our clients a unique position in the market.",
+    "intro": "Freelancing has given many professionals their independence. But businesses need comprehensive solutions that few experts can deliver alone. JUST ART brings together specialists from different fields to meet that need, with creative, management and training solutions.",
     "storyTitle": "Our story",
     "story": "JUST ART officially launched in 2025, after extensive reflection on the challenges designers face in gaining recognition in the market. Since digital presence is a key driver of business visibility, JUST ART leverages this reality to offer solutions tailored to entrepreneurs' needs.",
     "modelTitle": "Our collaboration model",
-    "modelIntro": "JUST ART operates without fixed employees, working on a collaborative model:",
+    "modelIntro": "JUST ART operates without fixed employees: a team assembled to fit each project.",
     "levels": [
-      { "title": "Level 1 collaborators", "description": "directly involved in management and content creation." },
-      { "title": "Level 2 collaborators", "description": "brought in for specific projects." }
+      {
+        "title": "Core team",
+        "description": "Collaborators directly involved in management and content creation."
+      },
+      {
+        "title": "Associate experts",
+        "description": "Specialists brought in for specific assignments."
+      }
     ],
-    "modelClosing": "Each professional keeps their independence while benefiting from being part of a network.",
+    "modelClosing": "Each professional keeps their independence while benefiting from a network.",
     "commitmentTitle": "Our commitment",
-    "commitment": "JUST ART aims to strengthen businesses' digital presence while offering young professionals real employment and training opportunities — an ecosystem that benefits both businesses and creative entrepreneurs, with a focus on innovation, quality, and social responsibility."
+    "commitment": "JUST ART aims to strengthen businesses' digital presence while offering young professionals real employment and training opportunities, an ecosystem that benefits both businesses and creative entrepreneurs, with a focus on innovation, quality, and social responsibility.",
+    "portfolioLink": "See the portfolio"
   },
   "contactPage": {
     "title": "Let's talk about your project.",
@@ -125,9 +187,38 @@
     "note": "Offers shown without a listed price — pricing provided on request.",
     "cta": "Request a quote",
     "items": [
-      { "name": "Start", "features": ["Presentation of 2 logo proposals", "PNG & JPG files", "3 mockups", "Logo guide"] },
-      { "name": "Build", "features": ["Presentation of 2 logo proposals", "PNG & JPG files", "3 mockups", "Logo guide", "Business card", "Letterhead"] },
-      { "name": "Grow", "features": ["Presentation of 3 logo proposals", "PNG & JPG files", "3 mockups", "Logo guide", "Business card", "Letterhead", "Badge & Flyer"] }
+      {
+        "name": "Start",
+        "features": [
+          "Presentation of 2 logo proposals",
+          "PNG & JPG files",
+          "3 mockups",
+          "Logo guide"
+        ]
+      },
+      {
+        "name": "Build",
+        "features": [
+          "Presentation of 2 logo proposals",
+          "PNG & JPG files",
+          "3 mockups",
+          "Logo guide",
+          "Business card",
+          "Letterhead"
+        ]
+      },
+      {
+        "name": "Grow",
+        "features": [
+          "Presentation of 3 logo proposals",
+          "PNG & JPG files",
+          "3 mockups",
+          "Logo guide",
+          "Business card",
+          "Letterhead",
+          "Badge & Flyer"
+        ]
+      }
     ]
   },
   "finalCta": {

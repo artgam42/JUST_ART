@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { getSocialLinks } from '../../lib/social';
 
 type NavDict = {
   home: string;
@@ -45,15 +46,11 @@ export default function Footer({
         </Link>
       </nav>
       <div className="flex justify-center gap-3 mb-4">
-        <a href="https://www.facebook.com/share/1Dc45vY5xv/" target="_blank" rel="noopener noreferrer">
-          Facebook
-        </a>
-        <a href="https://www.instagram.com/just.art.agency" target="_blank" rel="noopener noreferrer">
-          Instagram
-        </a>
-        <a href="https://www.tiktok.com/@just.art.agency" target="_blank" rel="noopener noreferrer">
-          TikTok
-        </a>
+        {getSocialLinks(locale).map((s) => (
+          <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer">
+            {s.name}
+          </a>
+        ))}
       </div>
       <p>{footer.copyright}</p>
     </footer>

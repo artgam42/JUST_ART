@@ -11,7 +11,7 @@ type ButtonProps = {
   className?: string;
 };
 
-const base = 'inline-block text-sm px-4 py-2 transition-opacity hover:opacity-90';
+const base = 'inline-block text-center text-sm px-4 py-2 transition-opacity hover:opacity-70';
 const variants = {
   primary: 'bg-accent text-white',
   secondary: 'border border-current',
@@ -26,9 +26,17 @@ export default function Button({
   disabled = false,
   className: extraClassName = '',
 }: ButtonProps) {
-  const className = `${base} ${variants[variant]} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`;
+  const className = `${base} ${variants[variant]} ${disabled ? 'opacity-50 cursor-not-allowed' : ''} ${extraClassName}`.trim();
 
   if (href) {
+    // Lyen ekstèn (ex. WhatsApp) : <a> nòmal ki louvri nan yon nouvo onglè
+    if (/^https?:\/\//.test(href)) {
+      return (
+        <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+          {children}
+        </a>
+      );
+    }
     return (
       <Link href={href} className={className}>
         {children}

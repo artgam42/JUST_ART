@@ -41,31 +41,33 @@ export default function ContactForm({ dict }: { dict: FormDict }) {
 
   if (status === 'success') {
     return (
-      <p className="text-sm border border-navy/15 p-6 text-center text-gray-600 max-w-md">
+      <p className="text-sm border border-navy/15 p-6 text-center text-gray-600 w-full lg:max-w-4xl lg:mx-auto">
         {dict.success}
       </p>
     );
   }
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 max-w-md">
-      <div>
-        <label className="block text-xs text-gray-500 mb-1">{dict.name}</label>
-        <input
-          type="text"
-          name="user_name"
-          required
-          className="w-full border border-navy/20 px-3 py-2 text-sm text-navy"
-        />
-      </div>
-      <div>
-        <label className="block text-xs text-gray-500 mb-1">{dict.email}</label>
-        <input
-          type="email"
-          name="user_email"
-          required
-          className="w-full border border-navy/20 px-3 py-2 text-sm text-navy"
-        />
+    <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 w-full lg:max-w-4xl lg:mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-xs text-gray-500 mb-1">{dict.name}</label>
+          <input
+            type="text"
+            name="user_name"
+            required
+            className="w-full border border-navy/20 px-3 py-2 text-sm text-navy"
+          />
+        </div>
+        <div>
+          <label className="block text-xs text-gray-500 mb-1">{dict.email}</label>
+          <input
+            type="email"
+            name="user_email"
+            required
+            className="w-full border border-navy/20 px-3 py-2 text-sm text-navy"
+          />
+        </div>
       </div>
       <div>
         <label className="block text-xs text-gray-500 mb-1">{dict.subject}</label>
