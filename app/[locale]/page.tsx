@@ -100,10 +100,21 @@ export default async function HomePage({
       </Container>
 
       <Container className="pb-16 sm:pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 max-w-4xl mx-auto">
-          {dict.pillars.map((p) => (
-            <div key={p.title}>
-              <h2 className="font-display text-xl sm:text-1xl font-bold uppercase tracking-wide text-[#ffffff] text-center leading-snug">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-28">
+          {dict.pillars.map((p, index) => (
+            <div
+              key={p.title}
+              className="flex flex-col md:flex-row items-center md:items-center gap-4 md:gap-3"
+            >
+              {/* Blue line */}
+              <div
+                className={`bg-[#1D00FF] shrink-0 order-2 md:order-1
+            w-[80px] h-[6px] md:w-[6px] md:h-[40px]
+            ${index === dict.pillars.length - 1 ? "hidden md:block" : ""}`}
+              />
+
+              {/* Title */}
+              <h2 className="order-1 md:order-2 font-display text-xl sm:text-1xl font-bold uppercase tracking-wide text-[#ffffff] text-center md:text-left leading-snug">
                 {p.title}
               </h2>
             </div>

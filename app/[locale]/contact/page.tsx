@@ -62,7 +62,7 @@ export default async function ContactPage({
 
         <ContactForm dict={t.form} />
 
-        <div className="mt-12 pt-8 border-t border-navy/10 flex flex-col md:flex-row items-center justify-center gap-20">
+        <div className="mt-12 pt-12 border-t border-navy/10 flex flex-col md:flex-row md:items-center justify-center gap-10">
           <div className="flex flex-col sm:flex-row sm:items-center gap-3">
             <span className="text-xs text-gray-500 uppercase tracking-wide">
               {t.whatsapp.title} :
